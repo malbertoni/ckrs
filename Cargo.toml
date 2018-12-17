@@ -1,0 +1,13 @@
+[package]
+name = "ckrs"
+version = "0.1.0"
+authors = ["Matt Albertoni <matthias.albertoni@gmail.com>"]
+
+
+[lib]
+name = "ckrs_pr"
+path = "lib/ckrs_pr.rs"
+
+[dependencies]
+paste = "0.1"
+cfg-if = "0.1"
