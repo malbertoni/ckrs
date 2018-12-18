@@ -11,6 +11,9 @@ type CkrsEpochCb = fn(&mut CkrsEpochEntry);
 pub struct CkrsEpochEntry {
     function: CkrsEpochCb,
 }
+pub struct CkrsEpochSection {
+    bucket: u32,
+}
 
 pub struct CkrsEpochRef {
     epoch: u32,
@@ -34,4 +37,18 @@ pub struct CkrsEpoch {
     n_free: u32,
 }
 
+impl CkrsEpochRecord {
+    fn _ckrs_epoch_addref(&mut self, _section: &mut CkrsEpochSection) {
 
+    }
+    fn _ckrs_epoch_delref(&mut self, _section: &mut CkrsEpochSection) -> bool {
+        return false;
+    }
+    pub fn ckrs_epoch_begin(&mut self, _section: Option<&mut CkrsEpochSection>) {
+
+        if let Some(mut s) = _section {
+            self._ckrs_epoch_addref(s);
+        }
+    }
+
+}
