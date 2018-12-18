@@ -1,4 +1,11 @@
-extern crate ckrs_pr;
+#![feature(asm)]
+extern crate paste;
+
+#[macro_use]
+extern crate cfg_if;
+
+pub mod ckrs_pr;
+pub mod ckrs_pr_x86;
 
 #[cfg(test)]
 mod tests {
